@@ -37,7 +37,7 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+  config.public_file_server.enabled = true
   config.public_file_server.headers = {
     "Cache-Control" => "public, s-maxage=#{30.days.to_i}, max-age=#{3000.days.to_i}"
   }
@@ -105,7 +105,7 @@ Rails.application.configure do
   ]
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  config.log_formatter = Logger::Formatter.new
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     # Use a different logger for distributed setups.
